@@ -25,16 +25,16 @@ Things you may want to cover:
 
 ## usersテーブル
 
-|Column                     | Type   |Options                  |
-|-------------------------- | ------ | ----------------------- |
-|nickname                   | string | null: false             |
-|email                      | string | null: false unique:true |
-|encrypted_password         | string | null: false             |
-|last_name                  | string | null: false             |
-|first_name                 | string | null: false             |
-|last_name_kana             | string | null: false             |
-|first_name_kana            | string | null: false             |
-|date                       | text   | null: false             |
+|Column                     | Type       |Options                  |
+|-------------------------- | ---------- | ----------------------- |
+|nickname                   | string     | null: false             |
+|email                      | string     | null: false unique:true |
+|encrypted_password         | string     | null: false             |
+|last_name                  | string     | null: false             |
+|first_name                 | string     | null: false             |
+|last_name_kana             | string     | null: false             |
+|first_name_kana            | string     | null: false             |
+|date                       | datetime   | null: false             |
 
 ### Association
 
@@ -51,7 +51,7 @@ Things you may want to cover:
 |shipping_fee_id         | integer      | null: false                    |
 |prefecture_id           | integer      | null: false                    |
 |shipping_time_number_id | integer      | null: false                    |
-|prices                  | string       | null: false                    |
+|prices                  | integer       | null: false                    |
 |user                    | references   | null: false, foreign_key: true |
 
 ### Association
@@ -81,8 +81,8 @@ Things you may want to cover:
 |street_address       | string       | null: false                    |
 |name_of_the_building | string       |                                |
 |telephone_number     | string       | null: false                    |
-|purchase_records     | references   | null: false, foreign_key: true |
+|purchase_record     | references   | null: false, foreign_key: true |
 
 ### Association
 
-belongs_to :purchase_records
+belongs_to :purchase_record
