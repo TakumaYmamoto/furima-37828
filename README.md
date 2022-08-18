@@ -34,7 +34,7 @@ Things you may want to cover:
 |first_name                 | string     | null: false             |
 |last_name_kana             | string     | null: false             |
 |first_name_kana            | string     | null: false             |
-|date                       | date   | null: false             |
+|birth_date                 | datetime   | null: false             |
 
 ### Association
 
@@ -51,7 +51,7 @@ Things you may want to cover:
 |shipping_fee_id         | integer      | null: false                    |
 |prefecture_id           | integer      | null: false                    |
 |shipping_time_number_id | integer      | null: false                    |
-|price                  | integer       | null: false                    |
+|price                   | integer       | null: false                    |
 |user                    | references   | null: false, foreign_key: true |
 
 ### Association
