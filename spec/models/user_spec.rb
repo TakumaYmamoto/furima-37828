@@ -12,7 +12,6 @@ RSpec.describe User, type: :model do
   end
 
   context '新規登録ができない時' do
-    let(:user) { FactoryBot.create(:user) }
     it 'nicknameが空では登録できない' do
       @user.nickname = ''
       @user.valid?
