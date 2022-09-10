@@ -1,12 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-
-  context '商品の登録'do
   before do
-    user = FactoryBot.create(:user)
-    @item = FactoryBot.build(:item, user_id: user.id)
-    end
+    @item = FactoryBot.build(:item,)
+  end
+  context '商品の登録'do
     
    context '内容に問題ない場合' do
     it '必要情報を入力すると登録できる' do
