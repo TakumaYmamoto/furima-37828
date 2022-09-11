@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :items
+
   validates :nickname,            presence: true, length: { maximum: 6 }
   validates :last_name_kana,      presence: true,format: {with: /\A[ァ-ヶー－]+\z/}
   validates :first_name_kana,     presence: true,format: {with: /\A[ァ-ヶー－]+\z/}
