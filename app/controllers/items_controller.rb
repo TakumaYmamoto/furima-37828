@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show,]
-  before_action :set_item, only: [:show, :edit, :update]
-  before_action :item_confirmation, only: [:edit, :destroy, :update]
+  before_action :set_item, only: [:show, :edit, :update,:destroy]
 
 
   def index
@@ -54,10 +53,4 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-    end
-
-    def item_confirmation
-      @item = Item.find(params[:id])
-      redirect_to root_path unless current_user.id == @item.user_id
-     end
     end
