@@ -1,7 +1,7 @@
 class PurchaseRecordsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :create]
   before_action :set_item, only: [:index, :create]
-  
+  before_action :purchased
 
   def index
     @purchase_record_address = PurchaseRecordAddress.new
@@ -35,6 +35,12 @@ class PurchaseRecordsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:item_id])
+    end
+
+    def purchased
+      if @item.purchase_record
+        redirect_to root_path
+      end
     end
 
 end
