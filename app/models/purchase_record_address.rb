@@ -7,7 +7,6 @@ class PurchaseRecordAddress
     validates :prefecture_id, presence: true, numericality: { other_than: 1 , message: "can't be blank"}
     validates :city
     validates :street_address
-    validates :name_of_the_building
     validates :telephone_number, format: { with: /\A\d{10}\z|\A\d{11}\z/ }
     validates :user_id
     validates :item_id

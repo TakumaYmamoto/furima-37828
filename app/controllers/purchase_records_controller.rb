@@ -1,5 +1,5 @@
 class PurchaseRecordsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :create]
+  before_action :authenticate_user!, only: [:index, :create]
   before_action :set_item, only: [:index, :create]
   before_action :purchased
 
@@ -38,7 +38,7 @@ class PurchaseRecordsController < ApplicationController
     end
 
     def purchased
-      if @item.purchase_record == @item.user_id
+      if @item.purchase_record || @item.user_id != current_user.id
         redirect_to root_path
       end
     end
