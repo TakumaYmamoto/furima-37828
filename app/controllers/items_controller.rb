@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    
   end
 
   def create
@@ -25,8 +24,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-     if user_signed_in? && current_user.id != @item.user_id 
+     if user_signed_in? && current_user.id != @item.user_id
        redirect_to root_path
+      elsif @item.purchase_record.present?
+        redirect_to root_path
      end
    end
 
@@ -53,7 +54,7 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-    end
+  end
 
     def redirect_root
       unless 
@@ -61,3 +62,4 @@ class ItemsController < ApplicationController
         redirect_to root_path
       end
     end
+end

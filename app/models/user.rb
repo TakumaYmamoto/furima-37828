@@ -18,5 +18,7 @@ class User < ApplicationRecord
     validates :last_name
   end
   
+  has_many :items
+  has_many :purchase_records
 
 end
