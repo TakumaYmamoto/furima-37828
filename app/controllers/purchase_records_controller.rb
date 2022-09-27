@@ -38,7 +38,7 @@ class PurchaseRecordsController < ApplicationController
     end
 
     def purchased
-      if @item.purchase_record || @item.user_id != current_user.id
+      if 
         redirect_to root_path
       end
     end
